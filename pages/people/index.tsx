@@ -20,6 +20,7 @@ import query from './query.graphql'
 import Profile from 'components/profile'
 import Search from 'components/search'
 import DepartmentFilter from 'components/departmentFilter'
+import s from './style.module.css'
 
 interface Props {
 	allPeople: PersonRecord[]
@@ -75,11 +76,11 @@ export default function PeoplePage({
 	// Sr. candidate TODO: Update URL based on search and department filters
 
 	return (
-		<main className="g-grid-container">
-			<div>
+		<main className={s.main}>
+			<div className={s.topSection}>
 				<div>
-					<h1>HashiCorp Humans</h1>
-					<span>Find a HashiCorp human</span>
+					<h1 className={s.title}>HashiCorp Humans</h1>
+					<span className={s.subtitle}>Find a HashiCorp human</span>
 				</div>
 				<Search
 					onInputChange={(e: React.ChangeEvent<HTMLInputElement>) => {
@@ -95,8 +96,8 @@ export default function PeoplePage({
 					}
 				/>
 			</div>
-			<div>
-				<aside>
+			<div className={s.content}>
+				<aside className={s.filterContainer}>
 					<DepartmentFilter
 						filteredDepartmentIds={filteredDepartmentIds}
 						clearFiltersHandler={() => {
@@ -112,15 +113,15 @@ export default function PeoplePage({
 						departmentTree={departmentTree}
 					/>
 				</aside>
-				<ul>
+				<ul className={s.profileList}>
 					{peopleFiltered.length === 0 && (
-						<div>
+						<li className={s.noResults}>
 							<span>No results found.</span>
-						</div>
+						</li>
 					)}
 					{peopleFiltered.map((person: PersonRecord) => {
 						return (
-							<li key={person.id}>
+							<li key={person.id} className={s.profileContainer}>
 								<Profile
 									imgUrl={person.avatar?.url}
 									name={person.name}
