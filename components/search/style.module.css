@@ -1,0 +1,27 @@
+.searchInput {
+	width: 100%;
+	max-width: 582px;
+	height: 48px;
+	border: 1px solid #cfd1d9;
+	border-radius: 100px;
+	padding: 0 1rem;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	color: #989cac;
+	background-image: url('../../public/icons/searchIcon.svg');
+	background-repeat: no-repeat;
+	background-position: 1rem center;
+	padding-left: 40px;
+}
+
+.checkboxContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 1rem;
+	color: #4e515d;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	gap: 8px;
+}

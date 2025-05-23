@@ -8,3 +8,81 @@
 /* you can use standard css plus anything from postcss-preset-env */
 
 /* ref: https://preset-env.cssdb.org/ */
+
+.main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 2rem;
+	font-family: 'Open Sans', sans-serif;
+}
+.topSection {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	text-align: center;
+}
+.title {
+	font-weight: 300;
+	font-size: 3.5rem;
+	line-height: 4rem;
+	letter-spacing: -0.075rem;
+	text-align: center;
+}
+
+.subtitle {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 28px;
+	color: #4e515d;
+}
+
+.content {
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+	gap: 2rem;
+	padding: 0 8rem;
+}
+
+.profileList {
+	grid-column: 2 / span 7;
+	display: flex;
+	gap: 1.5rem;
+	flex-wrap: wrap;
+}
+
+.noResults {
+	list-style: none;
+	margin: 0 auto;
+	font-size: 14px;
+	color: #4e515d;
+}
+
+.profileContainer {
+	list-style: none;
+	grid-column: 1 / 2;
+}
+
+@media only screen and (max-width: 767px) {
+	.profileList {
+		grid-column: 1 / -1;
+		justify-content: center;
+		padding: 0;
+		margin: 0;
+	}
+	.content {
+		gap: 0;
+		padding: 0;
+	}
+}
+@media only screen and (max-width: 500px) {
+	.topSection {
+		margin: 0 1rem;
+	}
+}
+@media only screen and (max-width: 320px) {
+	/* .content {
+    padding: 0;
+  } */
+}

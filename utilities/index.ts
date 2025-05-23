@@ -38,8 +38,9 @@ export const departmentRecordsToDepartmentTree = (
 				listWithChildren[currentItemParentId].children.push(
 					currentItemWithChildren
 				)
-			}
-
+			} else {
+				nestedList.push(currentItemWithChildren)
+			} // fixed if no parent - nothing happens
 			return nestedList
 		},
 		[] as DepartmentRecord[]
